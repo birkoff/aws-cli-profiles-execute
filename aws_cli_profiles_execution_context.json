@@ -1,0 +1,4 @@
+{
+  "dtap":["dev","qa","uat","prod"],
+  "lower":["sandbox","dev","qa"]
+}

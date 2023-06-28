@@ -30,13 +30,7 @@ func main() {
 
 	infoLogger := log.New(multiWriter, "[INFO] ", log.Ldate|log.Ltime)
 	errorLogger := log.New(multiWriter, "[ERROR] ", log.Ldate|log.Ltime)
-
-	// Check if aws_cli_profiles_execution_context.json exists
-	if _, err := os.Stat("aws_cli_profiles_execution_context.json"); os.IsNotExist(err) {
-		infoLogger.Println("aws_cli_profiles_execution_context.json file does not exist")
-
-	}
-
+	
 	awsConfigFile := os.Getenv("HOME") + "/.aws/config"
 	profiles, err := parseAwsConfigFile(awsConfigFile)
 
